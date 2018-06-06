@@ -1,3 +1,6 @@
 ﻿  main.cpp
 c:\users\mateo\desktop\git\hw03-ex01\hw03-ex01\main.cpp(41): warning C4101: 'ex': unreferenced local variable
-  HW03-EX01.vcxproj -> C:\Users\Mateo\Desktop\GIT\HW03-EX01\Debug\HW03-EX01.exe
+  readInt.cpp
+c:\users\mateo\desktop\git\hw03-ex01\hw03-ex01\readint.cpp(28): warning C4101: 'ex': unreferenced local variable
+  Generating Code...
+  HW03-EX01.vcxproj -> C:\Users\Mateo\Desktop\GIT\HW03-EX01\Debug\HW03-EX01.lib
