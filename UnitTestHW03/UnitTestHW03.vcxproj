@@ -171,6 +171,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Text Include="threeinput.txt" />
     <Text Include="zeroinput.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -16,25 +16,19 @@ int read_int(const string &prompt, int low, int high)
 
 	// Next asks the user for the input
 	int input;
-	
-	try
+	bool inputState = false;
+	std::cout << prompt;
+	cin >> input;
+	if (cin.fail())
 	{
-		cin.exceptions(ios::failbit | ios::badbit);
-		std::cout << prompt;
+		std::cout << "Invalid input. \n";
+		cin.clear();
+		cin.ignore(numeric_limits<int>::max(), '\n');
 		cin >> input;
 	}
 
-	// Makes sure the input is an int
-	catch (ios_base::failure &ex)
-	{
-		std::cout << "Invalid input, try again. \n";
-		cin.clear();
-		cin.ignore(numeric_limits<int>::max(), '\n');
-		std::cout << "Input a number." << endl;
-	}
-
 	// Now checks the input is between the parameters
-	bool correct = false;
+	bool correct = true;
 	do
 	{
 		if (input < low || high < input)
@@ -44,7 +38,7 @@ int read_int(const string &prompt, int low, int high)
 			std::cin >> input;
 		}
 		else
-			correct = true;
+			correct = false;
 	} while (correct);
 
 	return input;

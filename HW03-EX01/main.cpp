@@ -15,8 +15,6 @@
 //	found
 //	g.Attempting to allocate storage for a dynamic array when there is not sufficient
 //	memory available
-
-
 #include <iostream>
 #include <stdexcept>
 #include "readint.h"
@@ -34,8 +32,6 @@ int main()
 		cout << "Low: ";
 		cin >> low;
 
-		int number = read_int("Please enter a number within the range: ", low, high);
-		cout << "You entered " << number << endl;
 	}
 
 	catch (ios_base::failure &ex)
@@ -43,7 +39,12 @@ int main()
 		std::cout << "Invalid input, try again. \n";
 		cin.clear();
 		cin.ignore(numeric_limits<int>::max(), '\n');
-		std::cout << "Input a number." << endl;
+	}
+
+	try
+	{
+		int number = read_int("Please enter a number within the range: ", low, high);
+		cout << "You entered " << number << endl;
 	}
 
 	catch (invalid_argument &e) 
@@ -52,7 +53,6 @@ int main()
 		cout << e.what() << endl;
 	}
 
-	
 
 	system("pause");
 }
