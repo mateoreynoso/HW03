@@ -1,6 +1,7 @@
 #include "readInt.h"
 #include <iostream>
 #include <stdexcept>
+#include <limits>
 
 using namespace std;
 
@@ -18,8 +19,9 @@ int read_int(const string &prompt, int low, int high)
 	
 	try
 	{
+		cin.exceptions(ios::failbit | ios::badbit);
 		std::cout << prompt;
-		std:cin >> input;
+		cin >> input;
 	}
 
 	// Makes sure the input is an int
