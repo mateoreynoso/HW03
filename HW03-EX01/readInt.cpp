@@ -9,7 +9,7 @@ int read_int(const string &prompt, int low, int high)
 
 {
 	// First checks the arguments
-	if (low > high)
+	if (low >= high)
 	{
 		throw invalid_argument("The smallest acceptable number cannot be higher that the largest acceptable integer.");
 	}

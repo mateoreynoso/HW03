@@ -16,7 +16,7 @@ namespace UnitTestHW03
 		{
 			// Open a file stream to read the file zeroinput.txt (remember CS-172)
 			// Replace "UnitTester" with the name of your Native Unit Test project
-			ifstream ss("..\\UnitTester\\zeroinput.txt");
+			ifstream ss("..\\UnitTestHW03\\zeroinput.txt");
 			// Check if we opened the file stream successfully
 			if (ss.fail())
 				throw int(-1); // throw an integer with value -1
@@ -39,6 +39,17 @@ namespace UnitTestHW03
 			auto func = []() {
 				// call with incorrect arguments (test case 2)
 				read_int("My prompt: ", 5, 1);
+			};
+			// We expect an invalid_argument exception to be thrown when we call func!
+			Assert::ExpectException<std::invalid_argument>(func);
+		}
+
+		TEST_METHOD(TestCase4) // Test case 2: for invalid argument
+		{
+			// define a C++11 Lambda function to be called by your test
+			auto func = []() {
+				// call with incorrect arguments (test case 2)
+				read_int("My prompt: ", 0, 0);
 			};
 			// We expect an invalid_argument exception to be thrown when we call func!
 			Assert::ExpectException<std::invalid_argument>(func);
